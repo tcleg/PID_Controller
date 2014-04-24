@@ -12,7 +12,7 @@
 // http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
 // 
 // Revisions can be found here:
-// https://www.dropbox.com/sh/5aqe3wxf9fetv4s/ne4C3lgxDR
+// https://github.com/tcleg
 // 
 // Modified by: Trent Cleghorn , <trentoncleghorn@gmail.com>
 // 
