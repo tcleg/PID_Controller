@@ -2,7 +2,7 @@
 // Arduino PID Library Version 1.0.1 Modified Version for C -
 // Platform Independent
 // 
-// Revision: 1.0
+// Revision: 1.1
 // 
 // Description: The PID Controller module originally meant for Arduino made
 // platform independent. Some small bugs present in the original Arduino source
@@ -295,27 +295,109 @@ extern void PIDSampleTimeSet(tPIDParam *pid, float sampleTimeSeconds);
 // 
 // Basic Set and Get Functions for PID Parameters
 // 
+
+// 
+// PID Setpoint Set
+// Description:
+//      Alters the setpoint the PID controller will try to achieve.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+//      setpoint - The desired setpoint the PID controller will try to obtain.
+// Returns:
+//      Nothing.
+// 
 inline void 
 PIDSetpointSet(tPIDParam *pid, float setpoint) { pid->setpoint = setpoint; }
 
+// 
+// PID Input Set
+// Description:
+//      Should be called before calling PIDCompute so the PID controller will
+//      have an updated input value to work with.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+//      input - The value the controller will work with.
+// Returns:
+//      Nothing.
+// 
 inline void 
 PIDInputSet(tPIDParam *pid, float input) { pid->input = input; }
 
+// 
+// PID Output Get
+// Description:
+//      Typically, this function is called after PIDCompute in order to
+//      retrieve the output of the controller.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      The output of the specific PID controller.
+// 
 inline float 
 PIDOutputGet(tPIDParam *pid) { return pid->output; }
 
+// 
+// PID Proportional Gain Constant Get
+// Description:
+//      Returns the proportional gain constant value the particular
+//      controller is set to.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      The proportional gain constant.
+// 
 inline float 
 PIDKpGet(tPIDParam *pid) { return pid->dispKp; }						  
 
+// 
+// PID Integral Gain Constant Get
+// Description:
+//      Returns the integral gain constant value the particular
+//      controller is set to.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      The integral gain constant.
+// 
 inline float 
 PIDKiGet(tPIDParam *pid) { return pid->dispKi; }						  
 
+// 
+// PID Derivative Gain Constant Get
+// Description:
+//      Returns the derivative gain constant value the particular
+//      controller is set to.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      The derivative gain constant.
+// 
 inline float 
 PIDKdGet(tPIDParam *pid) { return pid->dispKd; }						  
 
+// 
+// PID Mode Get
+// Description:
+//      Returns the mode the particular controller is set to.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      MANUAL or AUTOMATIC depending on what the user set the 
+//      controller to.
+// 
 inline ePIDMode 
 PIDModeGet(tPIDParam *pid) { return pid->mode; }						  
 
+// 
+// PID Direction Get
+// Description:
+//      Returns the direction the particular controller is set to.
+// Parameters:
+//      pid - The address of a tPIDParam instantiation.
+// Returns:
+//      DIRECT or REVERSE depending on what the user set the
+//      controller to.
+// 
 inline ePIDDirection 
 PIDDirectionGet(tPIDParam *pid) { return pid->controllerDirection; }		
 

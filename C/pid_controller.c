@@ -2,7 +2,7 @@
 // Arduino PID Library Version 1.0.1 Modified Version for C -
 // Platform Independent
 // 
-// Revision: 1.0
+// Revision: 1.1
 // 
 // Description: The PID Controller module originally meant for Arduino made
 // platform independent. Some small bugs present in the original Arduino source
